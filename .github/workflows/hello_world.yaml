@@ -15,4 +15,4 @@ jobs:
       - name: Run multiline script
         run: |
             echo First line script
-            echo Second line script
+            echo Second line script 
