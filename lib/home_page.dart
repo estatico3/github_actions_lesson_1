@@ -47,10 +47,10 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _handleAddAction() async {
-    var string =
+    String? string =
         await showDialog(context: context, builder: (_) => AddStringDialog());
     setState(() {
-      strings.add(string);
+      strings.add(string ?? '');
     });
   }
 }
