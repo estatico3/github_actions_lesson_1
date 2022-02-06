@@ -10,7 +10,7 @@ jobs:
       - name: Preparation
         uses: actions/checkout@v2
       - name: Date print-out
-        runs: date
+        run: date
 
   job_2:
     name: Windows job
@@ -19,7 +19,7 @@ jobs:
       - name: Preparation
         uses: actions/checkout@v2
       - name: Date print-out
-        runs: |
+        run: |
           "@echo off"
           "For /f 'tokens=2-4 delims=/ ' %%a in ('date /t') do (set mydate=%%c-%%a-%%b)"
           "For /f 'tokens=1-2 delims=/:' %%a in ('time /t') do (set mytime=%%a%%b)"
@@ -32,7 +32,7 @@ jobs:
       - name: Preparation
         uses: actions/checkout@v2
       - name: Date print-out
-        runs: date
+        run: date
 
   job_4:
     name: Mac job
@@ -42,6 +42,6 @@ jobs:
       - name: Preparation
         uses: actions/checkout@v2
       - name: Date print-out
-        runs: date
+        run: date
 
 
