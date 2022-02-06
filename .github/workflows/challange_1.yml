@@ -37,7 +37,7 @@ jobs:
   job_4:
     name: Mac job
     runs-on: macos-latest
-    needs: [job1, job2, job3]
+    needs: [job_1, job_2, job_3]
     steps:
       - name: Preparation
         uses: actions/checkout@v2
