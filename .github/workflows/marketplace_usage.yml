@@ -13,8 +13,5 @@ jobs:
       - name: Install Flutter
         uses: britannio/action-install-flutter@v1.1
       - name: Analyze Dart
-        uses: zgosalvez/github-actions-analyze-dart@v1.6.1
-        with:
-          fail-on-warnings: true
-
+        run: dart analyze
       
