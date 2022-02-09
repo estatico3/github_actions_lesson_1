@@ -1,6 +1,9 @@
 name: second
 
-on: push
+on:
+  push:
+    branches:
+      2_jobs
 
 jobs:
   job1:
