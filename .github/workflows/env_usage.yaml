@@ -17,10 +17,10 @@ jobs:
       JOB_ENV_VAR: Job scope
       OVERRIDE: Job
     steps:
-      env:
-        STEP_ENV_VAR: Step scope
-        OVERRIDE: Step
       - name: Step 1
+        env:
+          STEP_ENV_VAR: Step scope
+          OVERRIDE: Step
         run: |
           echo $WORLFLOW_ENV_VAR
           echo $JOB_ENV_VAR
