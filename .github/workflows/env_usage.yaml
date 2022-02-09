@@ -25,5 +25,5 @@ jobs:
           echo $WORLFLOW_ENV_VAR
           echo $JOB_ENV_VAR
           echo $STEP_ENV_VAR
-          echo {{ env.OVERRIDE }}
+          echo ${{ env.OVERRIDE }}
 
