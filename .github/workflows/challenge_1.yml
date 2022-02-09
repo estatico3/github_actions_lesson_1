@@ -1,6 +1,9 @@
 name: challange_1
 
-on: push
+on:
+  push:
+    branches:
+      3_challange-1
 
 jobs:
   job_1:
