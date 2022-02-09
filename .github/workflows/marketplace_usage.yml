@@ -1,5 +1,8 @@
 name: Dart syntax checker
-on: push
+on:
+  push:
+    branches:
+      4_marketplace_workflows
 
 jobs:
   check_syntax:
