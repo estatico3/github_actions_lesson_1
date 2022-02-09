@@ -1,8 +1,9 @@
 name: Hello world action
 
-on: push
-  branch:
-    1_hello_world_workflow
+on:
+  push:
+    branches:
+      1_hello_world_workflow
 
 
 jobs:
