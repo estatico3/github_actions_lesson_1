@@ -1,0 +1,29 @@
+name: Environment variables usage
+
+on:
+  push:
+    branches:
+      5_env_usage
+
+env:
+  WORLFLOW_ENV_VAR: Workflow scope
+  OVERRIDE: Workflow
+
+jobs:
+  job-1:
+    name: Job 1
+    runs-on: macos-latest
+    env:
+      JOB_ENV_VAR: Job scope
+      OVERRIDE: Job
+    steps:
+      env:
+        STEP_ENV_VAR: Step scope
+        OVERRIDE: Step
+      - name: Step 1
+        run: |
+          echo $WORLFLOW_ENV_VAR
+          echo $JOB_ENV_VAR
+          echo $STEP_ENV_VAR
+          echo {{ env.OVERRIDE }}
+
