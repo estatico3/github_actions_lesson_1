@@ -1,0 +1,26 @@
+name: challenge-1
+
+on: push
+
+jobs:
+  job-1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print date ubuntu
+        run: date
+  job-2:
+    runs-on: windows-latest
+    steps:
+      - name: Print date windows
+        run: Get-Date
+  job-3:
+    runs-on: macos-latest
+    steps:
+      - name: Print date mac
+        run: date
+  job-4:
+    runs-on: macos-latest
+    needs: [job-1, job-2, job-3]
+    steps:
+      - name: Print date mac final
+        run: date
