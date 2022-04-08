@@ -1,0 +1,15 @@
+name: Marketplace and arguments
+
+on: push
+
+jobs:
+  setup-dart:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Dart
+        uses: dart-lang/setup-dart@v1.3
+        with:
+          sdk: 2.16.0
+      - name: Print Dart SDK version
+        run: dart --version
