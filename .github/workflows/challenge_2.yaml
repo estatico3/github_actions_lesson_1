@@ -1,0 +1,19 @@
+name: Upload an artifact
+
+on:
+  push:
+    branches:
+      - challenge_2
+
+env:
+  ARTIFACT_NAME: "First uploaded artifact"
+
+jobs:
+  upload-artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/upload-artifact@v3
+        with:
+          name: ${{ env.ARTIFACT_NAME }}
+          path: ./README.md
