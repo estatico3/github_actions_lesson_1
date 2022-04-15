@@ -4,7 +4,8 @@ on: push
 
 env:
   flutter_version: 2.10.4
-  build_number: 0.0.1
+  build_number: 1
+  build_name: 0.0.1
   artifact_name: "Android bundle"
 
 jobs:
@@ -46,7 +47,7 @@ jobs:
           version: ${{ env.flutter_version }}
 
       - name: Build android bundle
-        run: flutter build appbundle --build-number ${{ env.build_number }} --build-name ${{ env.build_number }}
+        run: flutter build appbundle --build-number ${{ env.build_number }} --build-name ${{ env.build_name }}
 
       - name: Upload build
         uses: actions/upload-artifact@v2
