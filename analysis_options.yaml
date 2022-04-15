@@ -7,4 +7,5 @@ analyzer:
 
 linter:
   rules:
+    - always_declare_return_types
     - cancel_subscriptions

@@ -1,0 +1,55 @@
+name: Basic Flutter pipeline
+
+on: push
+
+env:
+  flutter_version: 2.10.4
+  build_number: 0.0.1
+  artifact_name: "Android bundle"
+
+jobs:
+  analyze_and_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v2
+
+      - name: Setup Flutter
+        uses: flutter-actions/setup-flutter@1.2
+        with:
+          sdk: "stable"
+          version: ${{ env.flutter_version }}
+
+      - name: Update dependencies
+        run: flutter pub get
+
+      - name: Run build_runner
+        run: flutter pub run build_runner build
+
+      - name: Analyze code
+        run: flutter analyze
+
+      - name: Test code
+        run: flutter test
+
+  build_and_upload:
+    needs: [analyze_and_test]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v2
+
+      - name: Setup Flutter
+        uses: flutter-actions/setup-flutter@1.2
+        with:
+          sdk: "stable"
+          version: ${{ env.flutter_version }}
+
+      - name: Build android bundle
+        run: flutter build appbundle --build-number ${{ env.build_number }} --build-name ${{ env.build_number }}
+
+      - name: Upload build
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ env.artifact_name }}
+          path: ./build/app/outputs/bundle/release/
