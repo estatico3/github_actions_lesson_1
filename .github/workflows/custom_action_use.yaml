@@ -1,0 +1,10 @@
+name: Custom action use
+
+on: push
+
+jobs:
+  custom-action:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: estatico3/basic_custom_github_action@v1
+  
