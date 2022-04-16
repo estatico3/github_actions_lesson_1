@@ -6,5 +6,5 @@ jobs:
   custom-action:
     runs-on: ubuntu-latest
     steps:
-      - uses: estatico3/basic_custom_github_action@1.1.0
+      - uses: estatico3/basic_custom_github_action@7c18935c2aa729e0a3c88b0cbd5d75ce00bcf1af
   
